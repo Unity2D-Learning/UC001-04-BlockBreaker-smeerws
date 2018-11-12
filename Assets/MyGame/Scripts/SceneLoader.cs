@@ -7,6 +7,8 @@ public class SceneLoader : MonoBehaviour {
 
     
     private const string GAMEOVERSCREEN = "GameOver";
+    private const string CONGRATSSCREEN = "Congrats";
+    private const string LEVEL5 = "Level5";
 
     public void LoadNextScene()
     {
@@ -23,5 +25,15 @@ public class SceneLoader : MonoBehaviour {
     public void LoadGameOver()
     {
         SceneManager.LoadScene(GAMEOVERSCREEN);
+    }
+
+    public void LoadCongrats()
+    {
+        SceneManager.LoadScene(CONGRATSSCREEN);
+    }
+
+    public bool IsLastPlayScene()
+    {
+        return SceneManager.GetActiveScene().name == LEVEL5;
     }
 }

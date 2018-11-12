@@ -25,6 +25,18 @@ public class Level : MonoBehaviour {
         breakableBlocks--;
         if (breakableBlocks <= 0)
         {
+            LoadEndScreen();
+        }
+    }
+
+    private void LoadEndScreen()
+    {
+        if (sceneLoader.IsLastPlayScene())
+        {
+            sceneLoader.LoadCongrats();
+        }
+        else
+        {
             sceneLoader.LoadNextScene();
         }
     }
